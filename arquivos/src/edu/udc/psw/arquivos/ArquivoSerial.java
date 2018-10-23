@@ -1,5 +1,6 @@
 package edu.udc.psw.arquivos;
 
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -34,9 +35,9 @@ public class ArquivoSerial {
 			
 		if (politico.getNumero()>0) {
 			try {
-				objEscrita.append(
+				out.writeObject(                               //objEscrita.append(
 						String.format("%5s - %5d - %s",
-								politico.getPartido(),
+							politico.getPartido(),
 								politico.getNome(),
 								politico.getNumero())
 							);
@@ -48,6 +49,7 @@ public class ArquivoSerial {
 		}
 							
 	public void fecha_arquivo() {
+		Object objEscrita;
 		if(objEscrita !=null) {
 			try {
 			objEscrita.close();
