@@ -1,7 +1,8 @@
 
 package edu.udc.psw.arquivos;
 
-public class Politico {
+public class Politico implements Serializable {
+	
 	private String partido;
 	private String nome;
 	private int numero;
